@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Dominio/Dominio.csproj" />
+  <Project Path="ObligatorioP2/ObligatorioP2.csproj" />
+</Solution>
