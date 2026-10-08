@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Dominio.Modelos;
 
 namespace Dominio
 {
-    internal class Sistema
+    public class Sistema
     {
+      public List<Caso> _listaCasos { get; } = new List<Caso>();
+
+       
     }
 }
