@@ -27,12 +27,48 @@ namespace Dominio.Modelos
             Rol = rol;
         }
 
-        public void Validar() { }
+        public void Validar() {
+            validarN();
+            validarE();
+            validarC();
+            ValidarRol();
+        
+        }
 
         public override string ToString()
         {
             return $"{Nombre} ({Email} - {Rol})";
         }
+
+        public void validarN()
+        {
+            if (String.IsNullOrEmpty(Nombre))
+            {
+                throw new Exception ("El campo del nombre no puede estar vacio");
+            }
+        }
+        public void validarE()
+        {
+            if (String.IsNullOrEmpty(Email))
+            {
+                throw new Exception("El campo del Email no puede estar vacio");
+            }
+        }
+        public void validarC()
+        {
+            if (String.IsNullOrEmpty(Contrasena))
+            {
+                throw new Exception("El campo de contraseña no puede estar vacio");
+            }
+        }
+        public void ValidarRol()
+        {
+            if (Rol ==null) {
+                throw new Exception("Rol no puede estar vacio");
+            }
+        }
+
+
 
     }
 }

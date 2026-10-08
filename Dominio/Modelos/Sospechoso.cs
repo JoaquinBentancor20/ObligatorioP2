@@ -31,5 +31,35 @@ namespace Dominio.Modelos
         {
             return $"{Nombre} - CI: {Cedula})";
         }
+
+        public void validarN()
+        {
+            if (String.IsNullOrEmpty(Nombre))
+            {
+                throw new Exception("El campo del nombre no puede estar vacio");
+            }
+        }
+     
+        public void validarC()
+        {
+            if (String.IsNullOrEmpty(Cedula))
+            {
+                throw new Exception("El campo de cedula no puede estar vacio");
+            }
+        }
+        public void ValidarAntecedente()
+        {
+            if (Antecedentes == null)
+            {
+                throw new Exception("Antecedentes no puede estar vacio");
+            }
+        }
+        public void ValidarFecha()
+        {
+            if (FechaDeNacimiento > DateTime.Now)
+            {
+                throw new Exception("La fecha de nacimiento no puede ser mayor a la actual");
+            }
+        }
     }
 }
