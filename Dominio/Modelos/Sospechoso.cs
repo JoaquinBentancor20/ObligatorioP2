@@ -61,5 +61,10 @@ namespace Dominio.Modelos
                 throw new Exception("La fecha de nacimiento no puede ser mayor a la actual");
             }
         }
+        public override bool Equals(object? obj)
+        {
+            Sospechoso s= (Sospechoso)obj;
+            return Cedula == s.Cedula;
+        }
     }
 }
