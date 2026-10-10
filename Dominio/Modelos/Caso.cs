@@ -61,56 +61,56 @@ namespace Dominio.Modelos
             }
             return true;
         }
-        public void ValidarInvestigador()
+        private void ValidarInvestigador()
         {
             if (Investigador.Rol != Rol.Detective) 
             {
                 throw new Exception("El rol del Investigador tiene que ser de detective");
             }
         }
-        public void ValidarN()
+        private void ValidarN()
         {
             if (String.IsNullOrEmpty(Nombre))
             {
                 throw new Exception("Nombre del caso no puede estar vacio");
             }
         }
-        public void ValidarD()
+        private void ValidarD()
         {
             if (String.IsNullOrEmpty(Descripcion))
             {
                 throw new Exception("La descripcion del caso no puede estar vacio");
             }
         }
-        public void ValidarEstado()
+        private void ValidarEstado()
         {
             if (Estado ==null)
             {
                 throw new Exception("El estado del caso no puede ser null");
             }
         }
-        public void ValidarS()
+        private void ValidarS()
         {
             if (Sospechoso== null)
             {
                 throw new Exception("Sospechoso no puede estar vacio");
             }
         }
-        public void ValidarI()
+        private void ValidarI()
         {
             if (Investigador == null)
             {
                 throw new Exception("Investigador no puede estar vacio");
             }
         }
-        public void ValidarE()
+        private void ValidarE()
         {
             if (Evidencias == null)
             {
                 throw new Exception("La lista de evidencias no puede estar vacia");
             }
         }
-        public void ValidarFecha()
+        private void ValidarFecha()
         {
             if (FechaCreacion!=DateTime.Now)
             {

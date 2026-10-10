@@ -40,28 +40,28 @@ namespace Dominio.Modelos
             return $"{Nombre} ({Email} - {Rol})";
         }
 
-        public void validarN()
+        private void validarN()
         {
             if (String.IsNullOrEmpty(Nombre))
             {
                 throw new Exception ("El campo del nombre no puede estar vacio");
             }
         }
-        public void validarE()
+        private void validarE()
         {
             if (String.IsNullOrEmpty(Email))
             {
                 throw new Exception("El campo del Email no puede estar vacio");
             }
         }
-        public void validarC()
+        private void validarC()
         {
             if (String.IsNullOrEmpty(Contrasena))
             {
                 throw new Exception("El campo de contraseña no puede estar vacio");
             }
         }
-        public void ValidarRol()
+        private void ValidarRol()
         {
             if (Rol ==null) {
                 throw new Exception("Rol no puede estar vacio");

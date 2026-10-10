@@ -25,14 +25,20 @@ namespace Dominio.Modelos
             Antecedentes = antecedentes;
         }
 
-        public void Validar() { }
+        public void Validar() 
+        {
+        validarC();
+            validarN();
+            ValidarAntecedente();
+            ValidarFecha();
+        }
 
         public override string ToString()
         {
             return $"{Nombre} - CI: {Cedula})";
         }
 
-        public void validarN()
+        private void validarN()
         {
             if (String.IsNullOrEmpty(Nombre))
             {
@@ -40,21 +46,21 @@ namespace Dominio.Modelos
             }
         }
      
-        public void validarC()
+        private void validarC()
         {
             if (String.IsNullOrEmpty(Cedula))
             {
                 throw new Exception("El campo de cedula no puede estar vacio");
             }
         }
-        public void ValidarAntecedente()
+        private void ValidarAntecedente()
         {
             if (Antecedentes == null)
             {
                 throw new Exception("Antecedentes no puede estar vacio");
             }
         }
-        public void ValidarFecha()
+        private void ValidarFecha()
         {
             if (FechaDeNacimiento > DateTime.Now)
             {

@@ -33,14 +33,14 @@ namespace Dominio.Modelos
         {
             return $"Evidencia {Id} - {Descripcion} ({FechaDeRecoleccion:D})";
         }
-    public void ValidarFechaR() 
+    private void ValidarFechaR() 
         {
             if (FechaDeRecoleccion != DateTime.Now)
             {
                 throw new Exception("La fecha de recoleccion no puede ser distinta a la actual");
             }
         }
-        public void ValidarD() 
+        private void ValidarD() 
         {
             if (String.IsNullOrEmpty(Descripcion)) 
             {
