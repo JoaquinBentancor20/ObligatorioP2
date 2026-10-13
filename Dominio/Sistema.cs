@@ -1,19 +1,20 @@
-﻿using Dominio.Interefaces;
+﻿using Dominio.Interfaces;
 using Dominio.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Dominio.Interfaces;
 
 namespace Dominio
 {
     public class Sistema
     {
-        private static Sistema? _instancia;
-        private List<Caso> _listaCasos { get; };
+        private static Sistema _instancia;
+        private List<Caso> _listaCasos { get; }
 
-        private List<Investigador> _listaInvestigadores { get; };
+        private List<Investigador> _listaInvestigadores { get; }
 
-        private List<Sospechoso> _listaSospechosos { get; };
+        private List<Sospechoso> _listaSospechosos { get; }
 
         private Sistema()
         {
@@ -48,7 +49,7 @@ namespace Dominio
         {
             return _listaSospechosos;
         }
-        public void ValidarObjeto(IValidacion objeto)
+        public void ValidarObjeto(IValidable objeto)
         {
             if (objeto == null)
                 throw new Exception("El objeto no puede ser null");
@@ -74,11 +75,7 @@ namespace Dominio
             _listaCasos.Add(caso);
         }
 
-        public void AltaEvidencia(Caso caso, Evidencia evidencia)
-        {
-            ValidarObjeto(evidencia);
-            caso.AgragarEvidencia(evidencia);
-        }
+      
 
         public List<Caso> ObtenerCasosPorInvestigador(Investigador investigador)
         {

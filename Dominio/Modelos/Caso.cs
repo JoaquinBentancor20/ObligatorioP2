@@ -1,12 +1,12 @@
 ﻿using Dominio.Enums;
-using Dominio.Interefaces;
+using Dominio.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Dominio.Modelos
 {
-    public class Caso : IValidacion
+    public class Caso :IValidable
     {
         private static int _ultimoId = 0;
 
@@ -117,6 +117,15 @@ namespace Dominio.Modelos
                 throw new Exception("La Fecha de creacion no puede ser distinta a la actual");
             }
         }
+        public void AltaEvidencia(Caso caso, Evidencia evidencia)
+        {
+            if (evidencia == null)
+            {
+                throw new Exception("El objeto no puede estar vacio");
+            }
+            caso.AgragarEvidencia(evidencia);
+        }
+
     }
 
 }

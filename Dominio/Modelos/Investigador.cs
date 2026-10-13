@@ -1,12 +1,12 @@
 ﻿using Dominio.Enums;
-using Dominio.Interefaces;
+using Dominio.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Dominio.Modelos
 {
-    public class Investigador : IValidacion
+    public class Investigador : IValidable
     {
         private static int _UltimoId = 0;
         public int Id { get; }

@@ -1,11 +1,11 @@
-﻿using Dominio.Interefaces;
+﻿using Dominio.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Dominio.Modelos
 {
-    public abstract class Evidencia : IValidacion
+    public abstract class Evidencia : IValidable
     {
         private static int _UltimoId = 0;
         public int Id { get; }
@@ -46,6 +46,11 @@ namespace Dominio.Modelos
             {
                 throw new Exception("La descripcion no puede estar vacia");
             }
+        }
+
+        public int CalcularPesoEvidencia()
+        {
+            return -1;
         }
 
     }
