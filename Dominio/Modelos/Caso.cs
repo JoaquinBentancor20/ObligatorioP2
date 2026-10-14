@@ -68,12 +68,9 @@ namespace Dominio.Modelos
         }
         private void ValidarInvestigador()
         {
-<<<<<<< HEAD
+
             if (Investigador.Rol != Rol.Detective)
-=======
-            Investigador i = DevolverInvestigador();
-            if (i.DevolverRol() != Rol.Detective)
->>>>>>> 174723309b80f15af9568a35a8b4fecb5fb3cbe3
+
             {
                 throw new Exception("El rol del Investigador tiene que ser de detective");
             }
