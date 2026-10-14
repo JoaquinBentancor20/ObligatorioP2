@@ -7,9 +7,9 @@ namespace Dominio.Modelos
 {
     public class Testimoneo : Evidencia
     {
-        public string Nombre { get; set; }
+        private string Nombre { get; set; }
 
-        public Credibilidad Credibilidad { get; set; }
+        private Credibilidad Credibilidad { get; set; }
 
         public Testimoneo (DateTime fechaDeRecoleccion, string descripcion, string nombre, Credibilidad credibilidad): base(fechaDeRecoleccion,descripcion)
         {
@@ -41,6 +41,14 @@ namespace Dominio.Modelos
                 throw new Exception("La credibilidad del testimonio no puede estar vacio");
 
             }
+        }
+        public string ObtenerNombre()
+        {
+            return Nombre;
+        }
+        public Credibilidad ObtenerCredibilidad()
+        {
+            return Credibilidad;
         }
 
     }

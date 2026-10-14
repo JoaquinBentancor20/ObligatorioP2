@@ -10,11 +10,11 @@ namespace Dominio.Modelos
     {
         private static int _ultimoId = 0;
 
-        public int Id { get;}
-        public string Nombre { get; set; }
-        public string Cedula { get; set; }
-        public DateTime FechaDeNacimiento { get; set; }
-        public bool Antecedentes { get; set; }
+        private int Id { get;}
+        private string Nombre { get; set; }
+        private string Cedula { get; set; }
+        private DateTime FechaDeNacimiento { get; set; }
+        private bool Antecedentes { get; set; }
 
         public Sospechoso(string nombre, string cedula, DateTime fechaDeNacimiento, bool antecedentes)
         {
@@ -35,7 +35,7 @@ namespace Dominio.Modelos
 
         public override string ToString()
         {
-            return $"{Nombre} - CI: {Cedula})";
+            return $"{Nombre} - CI: {Cedula} - Fecha de Nacimiento: {FechaDeNacimiento}";
         }
 
         private void validarN()
@@ -71,6 +71,27 @@ namespace Dominio.Modelos
         {
             Sospechoso s= (Sospechoso)obj;
             return Cedula == s.Cedula;
+        }
+
+        public string DevolverCedula()
+        {
+            return Cedula;
+        }
+        public string DevolverNombre()
+        {
+            return Nombre;
+        }
+        public bool DevolverAntecedentes()
+        {
+            return Antecedentes;
+        }
+        public DateTime DevolverFecha()
+        {
+            return FechaDeNacimiento;
+        }
+        public DateTime DevolverFechaNacimiento()
+        {
+            return FechaDeNacimiento;
         }
     }
 }

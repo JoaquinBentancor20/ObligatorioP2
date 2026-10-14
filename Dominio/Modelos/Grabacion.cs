@@ -6,11 +6,11 @@ namespace Dominio.Modelos
 {
     public class Grabacion : Evidencia
     {
-        public bool CapturaInfraganti { get; set; }
+        private bool CapturaInfraganti { get; set; }
 
-        public int Calidad { get; set; }
+        private int Calidad { get; set; }
 
-        public int Duracion { get; set; }
+        private int Duracion { get; set; }
 
         public Grabacion(DateTime fechaDeRecoleccion, string descripcion, bool capturaInfraganti, int calidad, int duracion) : base(fechaDeRecoleccion, descripcion)
         {
@@ -45,15 +45,16 @@ namespace Dominio.Modelos
 
         private void validarCalidadRango()
         {
-            if (Calidad<1||Calidad>5) {
+            if (Calidad < 1 || Calidad > 5)
+            {
                 throw new Exception("La calidad tiene que estar entre 1 y 5");
             }
-            }
+        }
 
 
         private void validarCaptura()
         {
-            if (CapturaInfraganti==null)
+            if (CapturaInfraganti == null)
             {
                 throw new Exception("Capturar Infraganti no puede estar vacio");
             }
@@ -62,6 +63,19 @@ namespace Dominio.Modelos
         public override int CalcularPesoPorEvidencia()
         {
             throw new NotImplementedException();
+        }
+
+        public bool DevolverCapturaInfraganti()
+        {
+            return CapturaInfraganti;
+        }
+        public int DevolverCalidad()
+        {
+            return Calidad;
+        }
+        public int DevolverDuracion()
+        {
+            return Duracion;
         }
     }
 }

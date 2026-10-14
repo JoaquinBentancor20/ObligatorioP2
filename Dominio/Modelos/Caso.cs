@@ -6,18 +6,18 @@ using System.Text;
 
 namespace Dominio.Modelos
 {
-    public class Caso :IValidable
+    public class Caso : IValidable
     {
         private static int _ultimoId = 0;
 
-        public int Id { get; }
-        public string Nombre { get; set; }
-        public string Descripcion { get; set; }
-        public bool Estado { get; set; }
-        public Sospechoso Sospechoso { get; set; }
-        public Investigador Investigador { get; set; }
-        public List<Evidencia> Evidencias { get; }
-        public DateTime FechaCreacion { get; set; }
+        private int Id { get; }
+        private string Nombre { get; set; }
+        private string Descripcion { get; set; }
+        private bool Estado { get; set; }
+        private Sospechoso Sospechoso { get; set; }
+        private Investigador Investigador { get; set; }
+        private List<Evidencia> Evidencias { get; }
+        private DateTime FechaCreacion { get; set; }
 
         public Caso(string nombre, string descripcion, Sospechoso sospechoso, Investigador investigador)
         {
@@ -31,12 +31,17 @@ namespace Dominio.Modelos
             FechaCreacion = DateTime.Now;
         }
 
-        public void AgragarEvidencia(Evidencia evidencia)
+        public void AgregarEvidencia(Evidencia evidencia)
+
         {
+            if (evidencia == null)
+            {
+                throw new Exception("El objeto no puede estar vacio");
+            }
             Evidencias.Add(evidencia);
         }
 
-        public void Validar() 
+        public void Validar()
         {
             ValidarD();
             ValidarE();
@@ -55,7 +60,7 @@ namespace Dominio.Modelos
 
         public bool EstadoCaso()
         {
-            if (Estado==false) 
+            if (Estado == false)
             {
                 return false;
             }
@@ -63,7 +68,8 @@ namespace Dominio.Modelos
         }
         private void ValidarInvestigador()
         {
-            if (Investigador.Rol != Rol.Detective) 
+            Investigador i = DevolverInvestigador();
+            if (i.DevolverRol() != Rol.Detective)
             {
                 throw new Exception("El rol del Investigador tiene que ser de detective");
             }
@@ -84,14 +90,14 @@ namespace Dominio.Modelos
         }
         private void ValidarEstado()
         {
-            if (Estado ==null)
+            if (Estado == null)
             {
                 throw new Exception("El estado del caso no puede ser null");
             }
         }
         private void ValidarS()
         {
-            if (Sospechoso== null)
+            if (Sospechoso == null)
             {
                 throw new Exception("Sospechoso no puede estar vacio");
             }
@@ -112,20 +118,56 @@ namespace Dominio.Modelos
         }
         private void ValidarFecha()
         {
-            if (FechaCreacion!=DateTime.Now)
+            if (FechaCreacion != DateTime.Now)
             {
                 throw new Exception("La Fecha de creacion no puede ser distinta a la actual");
             }
         }
-        public void AltaEvidencia(Caso caso, Evidencia evidencia)
+        public void AltaEvidencia(Evidencia evidencia)
         {
-            if (evidencia == null)
-            {
-                throw new Exception("El objeto no puede estar vacio");
-            }
-            caso.AgragarEvidencia(evidencia);
+
+            AgregarEvidencia(evidencia);
+        }
+        public List<Evidencia> ObtenerEvidencias()
+        {
+            return Evidencias;
+
+        }
+
+        public int DevolverID()
+        {
+            return Id;
+        }
+
+        public string DevolverNombre()
+        {
+            return Nombre;
+        }
+
+        public string DevolverDescripcion()
+        {
+            return Descripcion;
+        }
+
+        public List<Evidencia> DevolverEvidencias()
+        {
+            return Evidencias;
+        }
+
+        public Sospechoso DevolverSospechoso()
+        {
+            return Sospechoso;
+        }
+
+        public Sospechoso DevolverS()
+        {
+            return Sospechoso;
+        }
+
+        public Investigador DevolverInvestigador()
+        {
+            return Investigador;
         }
 
     }
-
 }
