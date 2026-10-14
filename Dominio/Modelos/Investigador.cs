@@ -9,14 +9,14 @@ namespace Dominio.Modelos
     public class Investigador : IValidable
     {
         private static int _UltimoId = 0;
-        public int Id { get; }
+        private int Id { get; }
 
-        public string Nombre { get; set; }
-        public string Email { get; set; }
+        private string Nombre { get; set; }
+        private string Email { get; set; }
 
-        public string Contrasena { get; set; }
+        private string Contrasena { get; set; }
 
-        public Rol Rol { get; set; }
+        private Rol Rol { get; set; }
 
         public Investigador(string nombre, string email, string contrasena, Rol rol)
         {
@@ -67,8 +67,19 @@ namespace Dominio.Modelos
                 throw new Exception("Rol no puede estar vacio");
             }
         }
-
-
+        public Rol DevolverRol()
+        {
+            return Rol;
+        }   
+        public string DevolverNombre()
+        {
+            return Nombre;
+        }
+        public string DevolverEmail()
+        {
+            return Email;
+        }
+       
 
     }
 }

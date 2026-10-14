@@ -6,7 +6,7 @@ namespace Dominio.Modelos
 {
     public class Fisica : Evidencia
     {
-        public bool TieneHuella { get; set; }
+        private bool TieneHuella { get; set; }
 
         public Fisica(DateTime fechaDeRecoleccion, string descripcion, bool tieneHuella) : base(fechaDeRecoleccion, descripcion)
         {
@@ -20,6 +20,10 @@ namespace Dominio.Modelos
                 throw new Exception("La evidencia fisica no puede estar null");
             }
             }
+        public bool ValidarHuella()
+        {
+            return TieneHuella;
+        }
 
         public override int CalcularPesoPorEvidencia()
         {

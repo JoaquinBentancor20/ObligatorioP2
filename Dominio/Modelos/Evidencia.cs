@@ -8,11 +8,11 @@ namespace Dominio.Modelos
     public abstract class Evidencia : IValidable
     {
         private static int _UltimoId = 0;
-        public int Id { get; }
+        private int Id { get; }
 
-        public DateTime FechaDeRecoleccion { get; set; }
+        private DateTime FechaDeRecoleccion { get; set; }
 
-        public string Descripcion { get; set; }
+        private string Descripcion { get; set; }
 
         protected Evidencia(DateTime fechaDeRecoleccion, string descripcion)
         {
@@ -33,9 +33,20 @@ namespace Dominio.Modelos
         {
             return $"Evidencia {Id} - {Descripcion} ({FechaDeRecoleccion:D})";
         }
-    private void ValidarFechaR() 
+
+        public int DevolverID()
         {
-            if (FechaDeRecoleccion != DateTime.Now)
+            return Id;
+        }
+
+        public string DevolverDescripcion()
+        {
+            return Descripcion;
+        }
+
+        private void ValidarFechaR() 
+        {
+            if (FechaDeRecoleccion != DateTime.Now.Date)
             {
                 throw new Exception("La fecha de recoleccion no puede ser distinta a la actual");
             }
@@ -48,10 +59,7 @@ namespace Dominio.Modelos
             }
         }
 
-        public int CalcularPesoEvidencia()
-        {
-            return -1;
-        }
+
 
     }
 }

@@ -83,7 +83,8 @@ namespace Dominio
 
             foreach (Caso c in _listaCasos)
             {
-                if (c.Investigador == investigador)
+                Investigador casoInvestigador=c.DevolverInvestigador();
+                if (casoInvestigador.DevolverEmail() == investigador.DevolverEmail())
                 {
                     resultado.Add(c);
                 }
@@ -97,7 +98,7 @@ namespace Dominio
 
             foreach (Sospechoso s in _listaSospechosos)
             {
-                if (s.Antecedentes)
+                if (s.DevolverAntecedentes())
                 {
                     resultado.Add(s);
                 }
@@ -105,6 +106,18 @@ namespace Dominio
             }
             return resultado;
 
+        }
+
+        public Investigador BuscarInvestigadorPorEmail(string email)
+        {
+            foreach (Investigador i in _listaInvestigadores)
+            {
+                if (i.DevolverEmail() == email)
+                {
+                    return i;
+                }
+            }
+            return null;
         }
 
     }
