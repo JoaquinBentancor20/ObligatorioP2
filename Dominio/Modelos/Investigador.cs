@@ -16,7 +16,7 @@ namespace Dominio.Modelos
 
         private string Contrasena { get; set; }
 
-        private Rol Rol { get; set; }
+        public Rol Rol { get; set; }
 
         public Investigador(string nombre, string email, string contrasena, Rol rol)
         {
