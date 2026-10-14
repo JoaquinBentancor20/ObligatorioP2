@@ -20,7 +20,7 @@ namespace Dominio.Modelos
                 throw new Exception("La evidencia fisica no puede estar null");
             }
             }
-        public bool ValidarHuella()
+        public bool DevolverHuella()
         {
             return TieneHuella;
         }

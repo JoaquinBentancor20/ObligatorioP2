@@ -15,7 +15,7 @@ public static class Precarga
     private static void CargarInvestigadores(Sistema sistema)
     {
         Investigador i1 = new Investigador ('Juan Perez', 'juan.perez@example.com','Clave123!', Rol.Detective);
-        sistema.AgregarInvestigador(i1);
+        sistema.AltaInvestigador(i1);
     }
     private static void CargarSospechosos(Sistema sistema)
     {

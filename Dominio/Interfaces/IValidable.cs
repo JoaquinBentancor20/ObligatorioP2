@@ -3,7 +3,7 @@
     public interface IValidable
     {
     
-        public void Validar()
+       void Validar()
         {
 
 

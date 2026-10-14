@@ -25,7 +25,7 @@ namespace Dominio.Modelos
             Antecedentes = antecedentes;
         }
 
-        public void Validar() 
+        public virtual void Validar() 
         {
         validarC();
             validarN();
