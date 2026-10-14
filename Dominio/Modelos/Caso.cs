@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Dominio.Modelos
 {
-    public class Caso :IValidable
+    public class Caso : IValidable
     {
         private static int _ultimoId = 0;
 
@@ -36,7 +36,7 @@ namespace Dominio.Modelos
             Evidencias.Add(evidencia);
         }
 
-        public void Validar() 
+        public void Validar()
         {
             ValidarD();
             ValidarE();
@@ -55,7 +55,7 @@ namespace Dominio.Modelos
 
         public bool EstadoCaso()
         {
-            if (Estado==false) 
+            if (Estado == false)
             {
                 return false;
             }
@@ -63,7 +63,7 @@ namespace Dominio.Modelos
         }
         private void ValidarInvestigador()
         {
-            if (Investigador.Rol != Rol.Detective) 
+            if (Investigador.Rol != Rol.Detective)
             {
                 throw new Exception("El rol del Investigador tiene que ser de detective");
             }
@@ -84,14 +84,14 @@ namespace Dominio.Modelos
         }
         private void ValidarEstado()
         {
-            if (Estado ==null)
+            if (Estado == null)
             {
                 throw new Exception("El estado del caso no puede ser null");
             }
         }
         private void ValidarS()
         {
-            if (Sospechoso== null)
+            if (Sospechoso == null)
             {
                 throw new Exception("Sospechoso no puede estar vacio");
             }
@@ -112,7 +112,7 @@ namespace Dominio.Modelos
         }
         private void ValidarFecha()
         {
-            if (FechaCreacion!=DateTime.Now)
+            if (FechaCreacion > DateTime.Now) 
             {
                 throw new Exception("La Fecha de creacion no puede ser distinta a la actual");
             }
