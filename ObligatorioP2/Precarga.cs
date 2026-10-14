@@ -123,7 +123,7 @@ public static class Precarga
             new DateTime(2026, 1, 10),
             "Camara de seguridad.",
             true,
-            8,
+            4,
             120
         ));
 
