@@ -27,7 +27,7 @@ namespace Dominio.Modelos
             Rol = rol;
         }
 
-        public void Validar() {
+        public virtual void Validar() {
             validarN();
             validarE();
             validarC();

@@ -23,7 +23,7 @@ namespace Dominio.Modelos
 
         public abstract int CalcularPesoPorEvidencia();
 
-        public void Validar() 
+        public virtual void Validar() 
         {
             ValidarD();
             ValidarFechaR();

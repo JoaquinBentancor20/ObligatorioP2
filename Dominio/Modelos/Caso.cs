@@ -41,7 +41,7 @@ namespace Dominio.Modelos
             Evidencias.Add(evidencia);
         }
 
-        public void Validar()
+        public virtual void Validar()
         {
             ValidarD();
             ValidarE();
@@ -60,17 +60,12 @@ namespace Dominio.Modelos
 
         public bool EstadoCaso()
         {
-            if (Estado == false)
-            {
-                return false;
-            }
-            return true;
+           return Estado;
         }
         private void ValidarInvestigador()
         {
-
-            if (Investigador.Rol != Rol.Detective)
-
+            Investigador i=DevolverInvestigador();
+            if (i.DevolverRol() != Rol.Detective)
             {
                 throw new Exception("El rol del Investigador tiene que ser de detective");
             }
@@ -131,11 +126,6 @@ namespace Dominio.Modelos
 
             AgregarEvidencia(evidencia);
         }
-        public List<Evidencia> ObtenerEvidencias()
-        {
-            return Evidencias;
-
-        }
 
         public int DevolverID()
         {
@@ -162,10 +152,7 @@ namespace Dominio.Modelos
             return Sospechoso;
         }
 
-        public Sospechoso DevolverS()
-        {
-            return Sospechoso;
-        }
+     
 
         public Investigador DevolverInvestigador()
         {
