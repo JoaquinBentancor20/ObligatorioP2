@@ -162,7 +162,7 @@ public static class Precarga
             new DateTime(2026, 2, 3),
             "Grabacion de la camara del local.",
             true,
-            7,
+            5,
             90
         ));
 
@@ -201,7 +201,7 @@ public static class Precarga
             new DateTime(2026, 3, 5),
             "Grabacion de una reunion empresarial.",
             false,
-            9,
+            5,
             240
         ));
 
@@ -240,7 +240,7 @@ public static class Precarga
             new DateTime(2026, 4, 7),
             "Camara de seguridad registra un vehiculo saliendo de la zona.",
             true,
-            6,
+            5,
             180
         ));
 
@@ -279,7 +279,7 @@ public static class Precarga
             new DateTime(2026, 5, 9),
             "Grabacion del pasillo de la oficina.",
             false,
-            8,
+            4,
             150
         ));
 
@@ -357,7 +357,7 @@ public static class Precarga
             new DateTime(2026, 7, 13),
             "Grabacion de seguridad de un cajero automatico.",
             false,
-            9,
+            5,
             100
         ));
 
