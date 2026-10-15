@@ -396,7 +396,7 @@ public static class Precarga
             new DateTime(2026, 8, 15),
             "Camara del comercio registra la calle.",
             true,
-            6,
+            5,
             160
         ));
 
@@ -435,7 +435,7 @@ public static class Precarga
             new DateTime(2026, 9, 17),
             "Grabacion de la entrada de la galeria.",
             true,
-            8,
+            4,
             220
         ));
 
@@ -474,7 +474,7 @@ public static class Precarga
             new DateTime(2026, 10, 19),
             "Grabacion de seguridad del acceso a la propiedad.",
             false,
-            7,
+            5,
             140
         ));
 
