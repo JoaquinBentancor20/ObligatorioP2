@@ -5,6 +5,8 @@ using Dominio.Enums;
 public static class Precarga
 
 {
+    /// Carga todos los datos iniciales en el sistema (investigadores, sospechosos y casos)
+    /// </summary>
     public static void CargarDatos(Sistema sistema)
     {
         CargarInvestigadores(sistema);
@@ -12,6 +14,9 @@ public static class Precarga
         CargarCasos(sistema);
     }
 
+   
+    /// Carga 10 investigadores (5 detectives y 5 fiscales) en el sistema
+    /// </summary>
     private static void CargarInvestigadores(Sistema sistema)
     {
 
@@ -62,6 +67,9 @@ public static class Precarga
         sistema.AltaInvestigador(i10);
 
     }
+
+    /// Carga 15 sospechosos en el sistema (algunos con antecedentes y otros sin)
+    /// </summary>
     private static void CargarSospechosos(Sistema sistema)
     {
         Sospechoso s1 = new Sospechoso("Roberto Suarez", "12345678", new DateTime(1985, 3, 12), true);
@@ -98,9 +106,10 @@ public static class Precarga
         sistema.AltaSospechoso(s14);
         sistema.AltaSospechoso(s15);
 
-
     }
 
+    /// Carga 10 casos con sus respectivas evidencias (físicas, grabaciones y testimonios)
+    /// </summary>
     private static void CargarCasos(Sistema sistema)
     {
         List<Investigador> investigadores = sistema.ObtenerInvestigadores();

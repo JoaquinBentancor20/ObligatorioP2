@@ -6,6 +6,7 @@ using System.Text;
 
 namespace Dominio.Modelos
 {
+    /// Clase que representa un caso de investigación
     public class Caso : IValidable
     {
         private static int _ultimoId = 0;
@@ -19,6 +20,7 @@ namespace Dominio.Modelos
         private List<Evidencia> Evidencias { get; }
         private DateTime FechaCreacion { get; set; }
 
+        /// Constructor que inicializa un caso con sus datos
         public Caso(string nombre, string descripcion, Sospechoso sospechoso, Investigador investigador)
         {
             Id = ++_ultimoId;
@@ -31,6 +33,7 @@ namespace Dominio.Modelos
             FechaCreacion = DateTime.Now;
         }
 
+        /// Agrega una evidencia al caso
         public void AgregarEvidencia(Evidencia evidencia)
 
         {
@@ -41,6 +44,7 @@ namespace Dominio.Modelos
             Evidencias.Add(evidencia);
         }
 
+        /// Valida todos los campos del caso
         public virtual void Validar()
         {
             ValidarD();
@@ -127,33 +131,37 @@ namespace Dominio.Modelos
             AgregarEvidencia(evidencia);
         }
 
+        /// Devuelve el ID del caso
         public int DevolverID()
         {
             return Id;
         }
 
+        /// Devuelve el nombre del caso
         public string DevolverNombre()
         {
             return Nombre;
         }
 
+        /// Devuelve la descripción del caso
         public string DevolverDescripcion()
         {
             return Descripcion;
         }
 
+        /// Devuelve la lista de evidencias del caso
         public List<Evidencia> DevolverEvidencias()
         {
             return Evidencias;
         }
 
+        /// Devuelve el sospechoso del caso
         public Sospechoso DevolverSospechoso()
         {
             return Sospechoso;
         }
 
-     
-
+        /// Devuelve el investigador asignado al caso
         public Investigador DevolverInvestigador()
         {
             return Investigador;

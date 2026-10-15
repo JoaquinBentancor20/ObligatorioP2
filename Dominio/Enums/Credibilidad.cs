@@ -4,12 +4,11 @@ using System.Text;
 
 namespace Dominio.Enums
 {
-    //probando commit
+    /// Enumeración que representa los niveles de credibilidad de un testimonio
     public enum Credibilidad
     {
         Bajo,
         Medio,
         Alto
-
     }
 }

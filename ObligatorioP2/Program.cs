@@ -23,6 +23,7 @@ namespace ObligatorioP2
             }
         }
 
+        /// Muestra el menú principal con las opciones disponibles
         static void MostrarMenu(Sistema sistema)
         {
             bool continuar = true;
@@ -66,6 +67,7 @@ namespace ObligatorioP2
             }
         }
 
+        /// Opción A: Lista todos los casos con su ID, nombre y evidencias (ID y descripción)
         static void ListarCasosConEvidencias(Sistema sistema)
         {
             Console.Clear();
@@ -103,7 +105,7 @@ namespace ObligatorioP2
         }
 
 
-        //Buscar casos por email del investigador
+        /// Opción B: Busca casos por email del investigador y muestra ID, nombre e investigador
         static void BuscarCasosPorInvestigador(Sistema sistema)
         {
             Console.Clear();
@@ -141,8 +143,7 @@ namespace ObligatorioP2
         }
 
 
-        //Alta Sospechoso
-
+        /// Opción C: Registra un nuevo sospechoso en el sistema
         static void AltaSospechoso(Sistema sistema)
         {
             Console.Clear();
@@ -183,7 +184,7 @@ namespace ObligatorioP2
 
 
 
-        //Listar sospechosos con antecedentes
+        /// Opción D: Lista todos los sospechosos con antecedentes mostrando nombre, cédula y fecha de nacimiento
         static void ListarSospechososConAntecedentes(Sistema sistema)
         {
             Console.Clear();
